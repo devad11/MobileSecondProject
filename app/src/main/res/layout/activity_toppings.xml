@@ -6,4 +6,169 @@
     android:layout_height="match_parent"
     tools:context=".Toppings">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/toppingTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/topping_title"
+            android:textSize="30sp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/hamTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="@string/ham" />
+
+                <ToggleButton
+                    android:id="@+id/hamToggleButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="ToggleButton"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textOff="No"
+                    android:textOn="Yes" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/chickenTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="@string/chicken" />
+
+                <ToggleButton
+                    android:id="@+id/chickenToggleButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="ToggleButton"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textOff="No"
+                    android:textOn="Yes" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/mushroomTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="@string/mushroom" />
+
+                <ToggleButton
+                    android:id="@+id/mushroomToggleButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="ToggleButton"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textOff="No"
+                    android:textOn="Yes" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/pineappleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="@string/pineapple"/>
+
+                <ToggleButton
+                    android:id="@+id/pineappleToggleButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="ToggleButton"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textOff="No"
+                    android:textOn="Yes" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/sweetcornTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="@string/sweetcorn" />
+
+                <ToggleButton
+                    android:id="@+id/sweetcornToggleButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="ToggleButton"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textOff="No"
+                    android:textOn="Yes" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/onionTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="@string/onion" />
+
+                <ToggleButton
+                    android:id="@+id/onionToggleButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="ToggleButton"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textOff="No"
+                    android:textOn="Yes" />
+
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

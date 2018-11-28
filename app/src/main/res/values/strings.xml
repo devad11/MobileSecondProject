@@ -7,6 +7,13 @@
     <string name="city_center">City Center Pizza</string>
     <string name="title">Best Pizza Cork</string>
     <string name="hint">Swip left to continue</string>
+    <string name="topping_title">Choose Toppings</string>
+    <string name="onion">onion</string>
+    <string name="sweetcorn">sweetcorn</string>
+    <string name="pineapple">pineapple</string>
+    <string name="mushroom">mushroom</string>
+    <string name="chicken">chicken</string>
+    <string name="ham">ham</string>
     <string-array name="options">
         <item>ASAP Delivery</item>
         <item>Delivery for later</item>
