@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SecondProject</string>
+    <string name="choose_restaurant">Press long for Restaurants</string>
+    <string name="tj">Tequila Jacks</string>
+    <string name="soho">SoHo</string>
+    <string name="douglas">Douglas Pizza</string>
+    <string name="city_center">City Center Pizza</string>
+    <string name="title">Best Pizza Cork</string>
+    <string name="hint">Swip left to continue</string>
+    <string-array name="options">
+        <item>ASAP Delivery</item>
+        <item>Delivery for later</item>
+        <item>Collect</item>
+    </string-array>
+</resources>
