@@ -14,6 +14,8 @@
     <string name="mushroom">mushroom</string>
     <string name="chicken">chicken</string>
     <string name="ham">ham</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
     <string-array name="options">
         <item>ASAP Delivery</item>
         <item>Delivery for later</item>

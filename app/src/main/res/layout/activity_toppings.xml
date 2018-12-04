@@ -35,8 +35,8 @@
                     android:id="@+id/hamTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:text="@string/ham" />
+                    android:text="@string/ham"
+                    android:textSize="20sp" />
 
                 <ToggleButton
                     android:id="@+id/hamToggleButton"
@@ -44,9 +44,8 @@
                     android:layout_height="wrap_content"
                     android:checked="false"
                     android:text="ToggleButton"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textOff="No"
-                    android:textOn="Yes" />
+                    android:textOff="@string/no"
+                    android:textOn="@string/yes" />
 
             </TableRow>
 
@@ -59,8 +58,8 @@
                     android:id="@+id/chickenTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:text="@string/chicken" />
+                    android:text="@string/chicken"
+                    android:textSize="20sp" />
 
                 <ToggleButton
                     android:id="@+id/chickenToggleButton"
@@ -69,8 +68,8 @@
                     android:checked="false"
                     android:text="ToggleButton"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textOff="No"
-                    android:textOn="Yes" />
+                    android:textOff="@string/no"
+                    android:textOn="@string/yes" />
 
             </TableRow>
 
@@ -93,8 +92,8 @@
                     android:checked="false"
                     android:text="ToggleButton"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textOff="No"
-                    android:textOn="Yes" />
+                    android:textOff="@string/no"
+                    android:textOn="@string/yes" />
             </TableRow>
 
             <TableRow
@@ -116,8 +115,8 @@
                     android:checked="false"
                     android:text="ToggleButton"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textOff="No"
-                    android:textOn="Yes" />
+                    android:textOff="@string/no"
+                    android:textOn="@string/yes" />
 
             </TableRow>
 
@@ -140,8 +139,8 @@
                     android:checked="false"
                     android:text="ToggleButton"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textOff="No"
-                    android:textOn="Yes" />
+                    android:textOff="@string/no"
+                    android:textOn="@string/yes" />
 
             </TableRow>
 
@@ -164,8 +163,8 @@
                     android:checked="false"
                     android:text="ToggleButton"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textOff="No"
-                    android:textOn="Yes" />
+                    android:textOff="@string/no"
+                    android:textOn="@string/yes" />
 
             </TableRow>
         </TableLayout>
