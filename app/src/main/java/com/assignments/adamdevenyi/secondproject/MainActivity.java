@@ -18,7 +18,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private TextView restaurantTextView;
     private Spinner spinner;
-    private String[] restaurants = {"Cork City Center Pizza", "Douglas Pizza"};
+    private String[] restaurants = {"Cork City Center Order", "Douglas Order"};
 
     private static final int SWIPE_MIN_DISTANCE = 120;
     private static final int SWIPE_MAX_OFF_PATH = 250;
