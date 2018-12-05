@@ -21,6 +21,29 @@
             android:text="@string/topping_title"
             android:textSize="30sp" />
 
+        <TextView
+            android:id="@+id/pizzaBaseTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/pizza_base"
+            android:textSize="20sp" />
+
+        <SeekBar
+            android:id="@+id/mySeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="4"
+            tools:layout_editor_absoluteY="41dp" />
+
+        <TextView
+            android:id="@+id/pizzaTypeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/thin"
+            android:textSize="20sp" />
+
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -170,4 +193,5 @@
         </TableLayout>
 
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

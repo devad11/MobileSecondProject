@@ -16,6 +16,9 @@
     <string name="ham">ham</string>
     <string name="no">No</string>
     <string name="yes">Yes</string>
+    <string name="pizza_base">Pizza Type</string>
+    <string name="crispy">crispy</string>
+    <string name="thin">Thin</string>
     <string-array name="options">
         <item>ASAP Delivery</item>
         <item>Delivery for later</item>

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.CompoundButton;
+import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import java.util.ArrayList;
@@ -17,6 +19,8 @@ public class Toppings extends AppCompatActivity {
     private static final int SWIPE_THRESHOLD_VELOCITY = 200;
     private GestureDetector mDetector;
     private ToggleButton hamToggleButton, chickenToggleButton, mushroomToggleButton, pineappleToggleButton, sweetcornToggleButton, onionToggleButton;
+    private SeekBar mySeekBar;
+    private TextView pizzaTypeTextView;
     private ArrayList<String> pizza;
 
     @Override
@@ -30,6 +34,11 @@ public class Toppings extends AppCompatActivity {
         pineappleToggleButton = (ToggleButton) findViewById(R.id.pineappleToggleButton);
         sweetcornToggleButton = (ToggleButton) findViewById(R.id.sweetcornToggleButton);
         onionToggleButton = (ToggleButton) findViewById(R.id.onionToggleButton);
+
+        mySeekBar = (SeekBar) findViewById(R.id.mySeekBar);
+        mySeekBar.setProgress(2);
+        pizzaTypeTextView = (TextView) findViewById(R.id.pizzaTypeTextView);
+        final String[] types = {"Crispy", "Extra Thin", "Thin", "Medium", "Thick"};
 
         pizza = new ArrayList<String>();
 
@@ -163,6 +172,23 @@ public class Toppings extends AppCompatActivity {
                         System.out.println(pizza);
                     }
                 }
+            }
+        });
+
+        mySeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                pizzaTypeTextView.setText(types[progress]);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
             }
         });
 

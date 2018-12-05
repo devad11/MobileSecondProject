@@ -9,6 +9,7 @@ public class Order {
     private String shop;
     private String orderType;
     private String address;
+    private Float price;
     private List<String> pizza;
 
     public Order(){}
@@ -43,6 +44,14 @@ public class Order {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Float getPrice() {
+        return price;
+    }
+
+    public void setPrice(Float price) {
+        this.price = price;
     }
 
     public List<String> getPizza() {
