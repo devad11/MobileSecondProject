@@ -1,12 +1,16 @@
 package com.assignments.adamdevenyi.secondproject;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.util.ArrayList;
@@ -26,11 +30,14 @@ public class Toppings extends AppCompatActivity {
     private Double price;
     private Double toppingPrice;
     private Double total;
+    private Button nextButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_toppings);
+
+        myOrder = MainActivity.getMyOrder();
 
         hamToggleButton = (ToggleButton) findViewById(R.id.hamToggleButton);
         chickenToggleButton = (ToggleButton) findViewById(R.id.chickenToggleButton);
@@ -50,7 +57,22 @@ public class Toppings extends AppCompatActivity {
         priceAmountTextView = (TextView) findViewById(R.id.priceAmountTextView);
 
         pizza = new ArrayList<String>();
-        pizza.add("asdf");
+        pizza.add("12\"");
+
+        nextButton = (Button) findViewById(R.id.nextButton);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (myOrder.toString().contains("null") || myOrder.toString().contains("")){
+                    Toast.makeText(Toppings.this, "Enter all details", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent (Toppings.this, MainActivity.class);
+                    startActivity(intent);
+                }
+                else{
+                    System.out.println("no null");
+                }
+            }
+        });
 
         hamToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -274,7 +296,6 @@ public class Toppings extends AppCompatActivity {
     private void priceUpdate(){
         total = toppingPrice + price;
         priceAmountTextView.setText(total.toString() + "€");
-        myOrder = MainActivity.getMyOrder();
         myOrder.setPrice(total);
         myOrder.setPizza(pizza);
         System.out.println(myOrder.toString());

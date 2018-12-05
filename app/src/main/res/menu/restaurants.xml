@@ -8,4 +8,12 @@
     <item
         android:id="@+id/douglas"
         android:title="@string/douglas"/>
+
+    <item
+        android:id="@+id/blackrock"
+        android:title="@string/black_rock"/>
+
+    <item
+        android:id="@+id/wilton"
+        android:title="@string/wilton"/>
 </menu>

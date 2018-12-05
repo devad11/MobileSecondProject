@@ -7,17 +7,21 @@ public class Order {
     private String orderType;
     private String name;
     private String address;
+    private String pNum;
     private String deliveryTime;
     private Double price;
     private List<String> pizza;
 
-    public Order(){}
+    public Order(){
+        this.deliveryTime = "n/a";
+    }
 
-    public Order(String shop, String orderType, String name, String address, String deliveryTime, Double price, List<String> pizza){
+    public Order(String shop, String orderType, String name, String address, String pNum, String deliveryTime, Double price, List<String> pizza){
         this.shop = shop;
         this.orderType = orderType;
         this.name = name;
         this.address = address;
+        this.pNum = pNum;
         this.deliveryTime = deliveryTime;
         this.price = price;
         this.pizza = pizza;
@@ -56,21 +60,17 @@ public class Order {
         this.address = address;
     }
 
-    public String getDeliveryTime() {
-        return deliveryTime;
-    }
+    public String getpNum() { return pNum;  }
 
-    public void setDeliveryTime(String deliveryTime) {
-        this.deliveryTime = deliveryTime;
-    }
+    public void setpNum(String pNum) { this.pNum = pNum;  }
 
-    public Double getPrice() {
-        return price;
-    }
+    public String getDeliveryTime() { return deliveryTime; }
 
-    public void setPrice(Double price) {
-        this.price = price;
-    }
+    public void setDeliveryTime(String deliveryTime) { this.deliveryTime = deliveryTime; }
+
+    public Double getPrice() { return price; }
+
+    public void setPrice(Double price) { this.price = price; }
 
     public List<String> getPizza() {
         return pizza;
@@ -87,6 +87,7 @@ public class Order {
                 ", orderType='" + orderType + '\'' +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
+                ", pNum='" + pNum + '\'' +
                 ", deliveryTime='" + deliveryTime + '\'' +
                 ", price=" + price +
                 ", pizza=" + pizza +

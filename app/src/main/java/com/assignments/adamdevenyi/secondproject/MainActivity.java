@@ -14,7 +14,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -22,14 +21,14 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, TimePickerDialog.OnTimeSetListener {
     private TextView restaurantTextView, restaurantPickTextView;
     private Spinner spinner;
-    private String[] restaurants = {"Cork City Center Order", "Douglas Order"};
+    //private String[] restaurants = {"Cork City Center Order", "Douglas Order"};
 
     private static final int SWIPE_MIN_DISTANCE = 120;
     private static final int SWIPE_MAX_OFF_PATH = 250;
     private static final int SWIPE_THRESHOLD_VELOCITY = 200;
     private String typeText;
     private GestureDetector mDetector;
-    private EditText nameEditText, addressEditText;
+    private EditText nameEditText, addressEditText, pNumEditText;
     private TextView deliveryTimeTextView;
     public static Order myOrder;
 
@@ -42,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         nameEditText = (EditText) findViewById(R.id.nameEditText);
         addressEditText = (EditText) findViewById(R.id.addressEditText);
+        pNumEditText = (EditText) findViewById(R.id.pNumEditText);
         restaurantTextView = (TextView) findViewById(R.id.restaurantTextView);
         restaurantPickTextView = (TextView) findViewById(R.id.restaurantPickTextView);
         registerForContextMenu(restaurantPickTextView);
@@ -65,12 +65,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY){
                     myOrder.setAddress(addressEditText.getText().toString());
                     myOrder.setName(nameEditText.getText().toString());
+                    myOrder.setpNum(pNumEditText.getText().toString());
                     myOrder.setShop(restaurantPickTextView.getText().toString());
                     myOrder.setOrderType(typeText);
                     if (typeText.equals("Delivery for later")){
                         myOrder.setDeliveryTime(deliveryTimeTextView.getText().toString());
                     }
-                    //System.out.println(myOrder.toString());
                     Intent intent = new Intent (MainActivity.this, Toppings.class);
                     startActivity(intent);
                     return true;
@@ -101,6 +101,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             case R.id.douglas:
                 Toast.makeText(this, "Douglas selected", Toast.LENGTH_SHORT).show();
                 restaurantPickTextView.setText("Douglas Pizza");
+                return super.onContextItemSelected(item);
+            case R.id.blackrock:
+                Toast.makeText(this, "Blackrock selected", Toast.LENGTH_SHORT).show();
+                restaurantPickTextView.setText("Blackrock Pizza");
+                return super.onContextItemSelected(item);
+            case R.id.wilton:
+                Toast.makeText(this, "Wilton selected", Toast.LENGTH_SHORT).show();
+                restaurantPickTextView.setText("Wilton Pizza");
                 return super.onContextItemSelected(item);
                 default:
                     return super.onContextItemSelected(item);

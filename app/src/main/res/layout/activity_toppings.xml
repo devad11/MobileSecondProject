@@ -224,10 +224,10 @@
                 </TableLayout>
 
                 <Button
-                    android:id="@+id/orderButton"
+                    android:id="@+id/nextButton"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:text="@string/order" />
+                    android:text="@string/next" />
 
             </LinearLayout>
         </LinearLayout>
