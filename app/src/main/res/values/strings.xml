@@ -19,6 +19,7 @@
     <string name="pizza_base">Pizza Type</string>
     <string name="crispy">crispy</string>
     <string name="thin">Thin</string>
+    <string name="price">Price:</string>
     <string-array name="options">
         <item>ASAP Delivery</item>
         <item>Delivery for later</item>

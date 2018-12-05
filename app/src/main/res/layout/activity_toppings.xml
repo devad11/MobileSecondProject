@@ -190,6 +190,27 @@
                     android:textOn="@string/yes" />
 
             </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/priceTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="@string/price" />
+
+                <TextView
+                    android:id="@+id/priceAmountTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="" />
+
+            </TableRow>
         </TableLayout>
 
     </LinearLayout>
