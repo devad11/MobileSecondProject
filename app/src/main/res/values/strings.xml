@@ -26,6 +26,8 @@
     <string name="pizza_size">Pizza Size</string>
     <string name="inch">12\"</string>
     <string name="set_price">10.0€</string>
+    <string name="order">Order</string>
+    <string name="pnum">Phone number</string>
     <string-array name="options">
         <item>ASAP Delivery</item>
         <item>Delivery for later</item>
