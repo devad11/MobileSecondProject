@@ -21,6 +21,7 @@ public class Toppings extends AppCompatActivity {
     private ToggleButton hamToggleButton, chickenToggleButton, mushroomToggleButton, pineappleToggleButton, sweetcornToggleButton, onionToggleButton;
     private SeekBar mySeekBar;
     private TextView pizzaTypeTextView, priceAmountTextView;
+    private Order myOrder;
     private ArrayList<String> pizza;
     private Double price;
     private Double toppingPrice;
@@ -42,7 +43,6 @@ public class Toppings extends AppCompatActivity {
         mySeekBar.setProgress(2);
         pizzaTypeTextView = (TextView) findViewById(R.id.pizzaTypeTextView);
         final String[] size = {"7\"", "10\"", "12\"", "16\"", "19\""};
-        pizza.set(0, "12\"");
 
         price = 10.;
         toppingPrice = 0.;
@@ -50,6 +50,7 @@ public class Toppings extends AppCompatActivity {
         priceAmountTextView = (TextView) findViewById(R.id.priceAmountTextView);
 
         pizza = new ArrayList<String>();
+        pizza.add("asdf");
 
         hamToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -273,5 +274,9 @@ public class Toppings extends AppCompatActivity {
     private void priceUpdate(){
         total = toppingPrice + price;
         priceAmountTextView.setText(total.toString() + "€");
+        myOrder = MainActivity.getMyOrder();
+        myOrder.setPrice(total);
+        myOrder.setPizza(pizza);
+        System.out.println(myOrder.toString());
     }
 }

@@ -1,9 +1,6 @@
 package com.assignments.adamdevenyi.secondproject;
 
-import android.location.Address;
-
 import java.util.List;
-import java.util.Map;
 
 public class Order {
     private String shop;
@@ -11,12 +8,12 @@ public class Order {
     private String name;
     private String address;
     private String deliveryTime;
-    private Float price;
+    private Double price;
     private List<String> pizza;
 
     public Order(){}
 
-    public Order(String shop, String orderType, String name, String address, String deliveryTime, Float price, List<String> pizza){
+    public Order(String shop, String orderType, String name, String address, String deliveryTime, Double price, List<String> pizza){
         this.shop = shop;
         this.orderType = orderType;
         this.name = name;
@@ -67,11 +64,11 @@ public class Order {
         this.deliveryTime = deliveryTime;
     }
 
-    public Float getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

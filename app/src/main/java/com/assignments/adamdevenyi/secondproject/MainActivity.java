@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private GestureDetector mDetector;
     private EditText nameEditText, addressEditText;
     private TextView deliveryTimeTextView;
-    public Order myOrder;
+    public static Order myOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,5 +136,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         deliveryTimeTextView.setText("Delivery at " + hourOfDay + ":" + minute);
+    }
+
+    public static Order getMyOrder(){
+        return myOrder;
     }
 }
