@@ -20,6 +20,9 @@
     <string name="crispy">crispy</string>
     <string name="thin">Thin</string>
     <string name="price">Price:</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="city_center_pizza">City Center Pizza</string>
     <string-array name="options">
         <item>ASAP Delivery</item>
         <item>Delivery for later</item>
