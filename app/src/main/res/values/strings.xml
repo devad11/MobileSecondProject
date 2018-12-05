@@ -23,6 +23,9 @@
     <string name="name">Name</string>
     <string name="address">Address</string>
     <string name="city_center_pizza">City Center Pizza</string>
+    <string name="pizza_size">Pizza Size</string>
+    <string name="inch">12\"</string>
+    <string name="set_price">10.0€</string>
     <string-array name="options">
         <item>ASAP Delivery</item>
         <item>Delivery for later</item>

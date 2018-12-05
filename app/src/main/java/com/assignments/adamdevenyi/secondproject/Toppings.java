@@ -20,8 +20,11 @@ public class Toppings extends AppCompatActivity {
     private GestureDetector mDetector;
     private ToggleButton hamToggleButton, chickenToggleButton, mushroomToggleButton, pineappleToggleButton, sweetcornToggleButton, onionToggleButton;
     private SeekBar mySeekBar;
-    private TextView pizzaTypeTextView;
+    private TextView pizzaTypeTextView, priceAmountTextView;
     private ArrayList<String> pizza;
+    private Double price;
+    private Double toppingPrice;
+    private Double total;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +41,13 @@ public class Toppings extends AppCompatActivity {
         mySeekBar = (SeekBar) findViewById(R.id.mySeekBar);
         mySeekBar.setProgress(2);
         pizzaTypeTextView = (TextView) findViewById(R.id.pizzaTypeTextView);
-        final String[] types = {"Crispy", "Extra Thin", "Thin", "Medium", "Thick"};
+        final String[] size = {"7\"", "10\"", "12\"", "16\"", "19\""};
+        pizza.set(0, "12\"");
+
+        price = 10.;
+        toppingPrice = 0.;
+        total = 0.;
+        priceAmountTextView = (TextView) findViewById(R.id.priceAmountTextView);
 
         pizza = new ArrayList<String>();
 
@@ -49,12 +58,16 @@ public class Toppings extends AppCompatActivity {
 
                     if( !pizza.contains("ham")){
                         pizza.add("ham");
+                        toppingPrice = (toppingPrice + 0.50);
+                        priceUpdate();
                         System.out.println(pizza);
                     }
                 }
                 else{
                     if( pizza.contains("ham")){
                         pizza.remove("ham");
+                        toppingPrice = (toppingPrice - 0.50);
+                        priceUpdate();
                         System.out.println(pizza);
                     }
                 }
@@ -68,12 +81,16 @@ public class Toppings extends AppCompatActivity {
 
                     if( !pizza.contains("ham")){
                         pizza.add("ham");
+                        toppingPrice = (toppingPrice + 0.50);
+                        priceUpdate();
                         System.out.println(pizza);
                     }
                 }
                 else{
                     if( pizza.contains("ham")){
                         pizza.remove("ham");
+                        toppingPrice = (toppingPrice - 0.50);
+                        priceUpdate();
                         System.out.println(pizza);
                     }
                 }
@@ -87,12 +104,16 @@ public class Toppings extends AppCompatActivity {
 
                     if( !pizza.contains("pineapple")){
                         pizza.add("pineapple");
+                        toppingPrice = (toppingPrice + 0.50);
+                        priceUpdate();
                         System.out.println(pizza);
                     }
                 }
                 else{
                     if( pizza.contains("pineapple")){
                         pizza.remove("pineapple");
+                        toppingPrice = (toppingPrice - 0.50);
+                        priceUpdate();
                         System.out.println(pizza);
                     }
                 }
@@ -106,12 +127,16 @@ public class Toppings extends AppCompatActivity {
 
                     if( !pizza.contains("chicken")){
                         pizza.add("chicken");
+                        toppingPrice = (toppingPrice + 0.50);
+                        priceUpdate();
                         System.out.println(pizza);
                     }
                 }
                 else{
                     if( pizza.contains("chicken")){
                         pizza.remove("chicken");
+                        toppingPrice = (toppingPrice - 0.50);
+                        priceUpdate();
                         System.out.println(pizza);
                     }
                 }
@@ -125,12 +150,16 @@ public class Toppings extends AppCompatActivity {
 
                     if( !pizza.contains("mushroom")){
                         pizza.add("mushroom");
+                        toppingPrice = (toppingPrice + 0.50);
+                        priceUpdate();
                         System.out.println(pizza);
                     }
                 }
                 else{
                     if( pizza.contains("mushroom")){
                         pizza.remove("mushroom");
+                        toppingPrice = (toppingPrice - 0.50);
+                        priceUpdate();
                         System.out.println(pizza);
                     }
                 }
@@ -144,12 +173,16 @@ public class Toppings extends AppCompatActivity {
 
                     if( !pizza.contains("sweetcorn")){
                         pizza.add("sweetcorn");
+                        toppingPrice = (toppingPrice + 0.50);
+                        priceUpdate();
                         System.out.println(pizza);
                     }
                 }
                 else{
                     if( pizza.contains("sweetcorn")){
                         pizza.remove("sweetcorn");
+                        toppingPrice = (toppingPrice - 0.50);
+                        priceUpdate();
                         System.out.println(pizza);
                     }
                 }
@@ -163,12 +196,16 @@ public class Toppings extends AppCompatActivity {
 
                     if( !pizza.contains("onion")){
                         pizza.add("onion");
+                        toppingPrice = (toppingPrice + 0.50);
+                        priceUpdate();
                         System.out.println(pizza);
                     }
                 }
                 else{
                     if( pizza.contains("onion")){
                         pizza.remove("onion");
+                        toppingPrice = (toppingPrice - 0.50);
+                        priceUpdate();
                         System.out.println(pizza);
                     }
                 }
@@ -178,7 +215,29 @@ public class Toppings extends AppCompatActivity {
         mySeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                pizzaTypeTextView.setText(types[progress]);
+                pizzaTypeTextView.setText(size[progress]);
+                pizza.set(0, size[progress]);
+                switch (progress) {
+                    case 0:
+                        price = 5.;
+                        break;
+                    case 1:
+                        price = 7.5;
+                        break;
+                    case 2:
+                        price = 10.;
+                        break;
+                    case 3:
+                        price = 12.;
+                        break;
+                    case 4:
+                        price = 15.;
+                        break;
+                    default:
+                        price = 0.;
+                        break;
+                }
+                priceUpdate();
             }
 
             @Override
@@ -191,6 +250,7 @@ public class Toppings extends AppCompatActivity {
 
             }
         });
+
 
         mDetector = new GestureDetector(this,new GestureDetector.SimpleOnGestureListener(){
             @Override
@@ -209,5 +269,9 @@ public class Toppings extends AppCompatActivity {
     }
     public  boolean onTouchEvent(MotionEvent event){
         return mDetector.onTouchEvent(event);
+    }
+    private void priceUpdate(){
+        total = toppingPrice + price;
+        priceAmountTextView.setText(total.toString() + "€");
     }
 }

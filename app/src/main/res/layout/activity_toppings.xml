@@ -16,7 +16,7 @@
         <TextView
             android:id="@+id/toppingTitleTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="62dp"
             android:gravity="center"
             android:text="@string/topping_title"
             android:textSize="30sp" />
@@ -24,15 +24,15 @@
         <TextView
             android:id="@+id/pizzaBaseTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="46dp"
             android:gravity="center"
-            android:text="@string/pizza_base"
+            android:text="@string/pizza_size"
             android:textSize="20sp" />
 
         <SeekBar
             android:id="@+id/mySeekBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
             android:max="4"
             tools:layout_editor_absoluteY="41dp" />
 
@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/thin"
+            android:text="@string/inch"
             android:textSize="20sp" />
 
         <TableLayout
@@ -67,6 +67,7 @@
                     android:layout_height="wrap_content"
                     android:checked="false"
                     android:text="ToggleButton"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textOff="@string/no"
                     android:textOn="@string/yes" />
 
@@ -208,7 +209,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="25sp"
-                    android:text="" />
+                    android:text="@string/set_price" />
 
             </TableRow>
         </TableLayout>
