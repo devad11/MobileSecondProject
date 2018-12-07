@@ -33,6 +33,12 @@
     <string name="next">Next</string>
     <string name="order_info">Order Info</string>
     <string name="promo_code">Draw Promo Code Here</string>
+    <string name="details">Order Details</string>
+    <string name="shop">Shop</string>
+    <string name="phone">Phone</string>
+    <string name="orderType">Order Type</string>
+    <string name="time">Time</string>
+    <string name="price_title">Price</string>
     <string-array name="options">
         <item>ASAP Delivery</item>
         <item>Delivery for later</item>

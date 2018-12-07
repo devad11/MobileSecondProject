@@ -20,7 +20,7 @@ public class Promo extends AppCompatActivity implements GestureOverlayView.OnGes
 
     private GestureLibrary myLibrary;
     private Order myOrder;
-    private Double oldPrice;
+    private Double oldPrice, newPrice;
     private Button OrderInfo;
 
     @Override
@@ -48,7 +48,7 @@ public class Promo extends AppCompatActivity implements GestureOverlayView.OnGes
     @Override
     public void onGesturePerformed(GestureOverlayView overlay, Gesture gesture) {
 
-
+        newPrice = 0.;
         myOrder = MainActivity.getMyOrder();
         oldPrice = myOrder.getPrice();
 
@@ -67,11 +67,13 @@ public class Promo extends AppCompatActivity implements GestureOverlayView.OnGes
         });
         if (predictions.get(0).name.equals("PromoCode")){
             Toast.makeText(Promo.this, "20% OFF", Toast.LENGTH_SHORT).show();
-            oldPrice = (oldPrice * 0.8);
+            newPrice = (oldPrice * 0.8);
+            myOrder.setPrice(newPrice);
         }
         else if(predictions.get(0).name.equals("Pizza")){
             Toast.makeText(Promo.this, "5% OFF", Toast.LENGTH_SHORT).show();
-            oldPrice = (oldPrice * 0.95);
+            newPrice = (oldPrice * 0.95);
+            myOrder.setPrice(newPrice);
         }
     }
 }

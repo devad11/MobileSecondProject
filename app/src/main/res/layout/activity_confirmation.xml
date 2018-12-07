@@ -6,4 +6,179 @@
     android:layout_height="match_parent"
     tools:context=".Confirmation">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/confTextView"
+            android:layout_width="384dp"
+            android:layout_height="61dp"
+            android:gravity="center"
+            android:text="@string/details"
+            android:textSize="30sp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="122dp">
+
+                <TextView
+                    android:id="@+id/shopTextView"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/shop"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/shopChoicetextView"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/orderTypeTextView"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/orderType"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/orderTypeChoiceTextView"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/timeTextView"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/time"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/timeChoicetextView"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/priceTextView"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/price_title"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/priceChoicetextView"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/nameTextView"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/name"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/nameChoicetextView"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/addressTextView"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/address"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/addressChoicetextView"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/phoneTextView"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/phone"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/phoneChoicetextView"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="20sp" />
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
