@@ -64,6 +64,7 @@ public class Toppings extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                priceUpdate();
                 Intent intent = new Intent(Toppings.this, Promo.class);
                 startActivity(intent);
 

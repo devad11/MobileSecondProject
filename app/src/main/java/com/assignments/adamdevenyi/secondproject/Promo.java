@@ -1,5 +1,6 @@
 package com.assignments.adamdevenyi.secondproject;
 
+import android.content.Intent;
 import android.gesture.Gesture;
 import android.gesture.GestureLibraries;
 import android.gesture.GestureLibrary;
@@ -7,6 +8,8 @@ import android.gesture.GestureOverlayView;
 import android.gesture.Prediction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -16,11 +19,23 @@ import java.util.Comparator;
 public class Promo extends AppCompatActivity implements GestureOverlayView.OnGesturePerformedListener {
 
     private GestureLibrary myLibrary;
+    private Order myOrder;
+    private Double oldPrice;
+    private Button OrderInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_promo);
+
+        OrderInfo = (Button) findViewById(R.id.OrderInfo);
+        OrderInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Promo.this, Confirmation.class);
+                startActivity(intent);
+            }
+        });
 
         myLibrary = GestureLibraries.fromRawResource(this,R.raw.gestures);
         if (myLibrary.load() == false){
@@ -32,6 +47,10 @@ public class Promo extends AppCompatActivity implements GestureOverlayView.OnGes
 
     @Override
     public void onGesturePerformed(GestureOverlayView overlay, Gesture gesture) {
+
+
+        myOrder = MainActivity.getMyOrder();
+        oldPrice = myOrder.getPrice();
 
         ArrayList<Prediction> predictions = myLibrary.recognize(gesture);
         Collections.sort(predictions, new Comparator<Prediction>() {
@@ -48,11 +67,11 @@ public class Promo extends AppCompatActivity implements GestureOverlayView.OnGes
         });
         if (predictions.get(0).name.equals("PromoCode")){
             Toast.makeText(Promo.this, "20% OFF", Toast.LENGTH_SHORT).show();
-
+            oldPrice = (oldPrice * 0.8);
         }
         else if(predictions.get(0).name.equals("Pizza")){
             Toast.makeText(Promo.this, "5% OFF", Toast.LENGTH_SHORT).show();
-
+            oldPrice = (oldPrice * 0.95);
         }
     }
 }

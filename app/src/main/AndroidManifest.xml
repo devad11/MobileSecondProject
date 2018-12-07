@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Toppings" />
-        <activity android:name=".Promo"></activity>
+        <activity android:name=".Promo" />
+        <activity android:name=".Confirmation"></activity>
     </application>
 
 </manifest>
