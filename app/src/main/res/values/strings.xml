@@ -31,6 +31,8 @@
     <string name="black_rock">Blackrock Pizza</string>
     <string name="wilton">Wilton Pizza</string>
     <string name="next">Next</string>
+    <string name="order_info">Order Info</string>
+    <string name="promo_code">Draw Promo Code Here</string>
     <string-array name="options">
         <item>ASAP Delivery</item>
         <item>Delivery for later</item>

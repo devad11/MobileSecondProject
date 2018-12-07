@@ -63,31 +63,26 @@ public class Toppings extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (myOrder.toString().contains("null") || myOrder.toString().contains("")){
-                    Toast.makeText(Toppings.this, "Enter all details", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent (Toppings.this, MainActivity.class);
-                    startActivity(intent);
-                }
-                else{
-                    System.out.println("no null");
-                }
+
+                Intent intent = new Intent(Toppings.this, Promo.class);
+                startActivity(intent);
+
             }
         });
 
         hamToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+                if (isChecked) {
 
-                    if( !pizza.contains("ham")){
+                    if (!pizza.contains("ham")) {
                         pizza.add("ham");
                         toppingPrice = (toppingPrice + 0.50);
                         priceUpdate();
                         System.out.println(pizza);
                     }
-                }
-                else{
-                    if( pizza.contains("ham")){
+                } else {
+                    if (pizza.contains("ham")) {
                         pizza.remove("ham");
                         toppingPrice = (toppingPrice - 0.50);
                         priceUpdate();
@@ -100,17 +95,16 @@ public class Toppings extends AppCompatActivity {
         hamToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+                if (isChecked) {
 
-                    if( !pizza.contains("ham")){
+                    if (!pizza.contains("ham")) {
                         pizza.add("ham");
                         toppingPrice = (toppingPrice + 0.50);
                         priceUpdate();
                         System.out.println(pizza);
                     }
-                }
-                else{
-                    if( pizza.contains("ham")){
+                } else {
+                    if (pizza.contains("ham")) {
                         pizza.remove("ham");
                         toppingPrice = (toppingPrice - 0.50);
                         priceUpdate();
@@ -123,17 +117,16 @@ public class Toppings extends AppCompatActivity {
         pineappleToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+                if (isChecked) {
 
-                    if( !pizza.contains("pineapple")){
+                    if (!pizza.contains("pineapple")) {
                         pizza.add("pineapple");
                         toppingPrice = (toppingPrice + 0.50);
                         priceUpdate();
                         System.out.println(pizza);
                     }
-                }
-                else{
-                    if( pizza.contains("pineapple")){
+                } else {
+                    if (pizza.contains("pineapple")) {
                         pizza.remove("pineapple");
                         toppingPrice = (toppingPrice - 0.50);
                         priceUpdate();
@@ -146,17 +139,16 @@ public class Toppings extends AppCompatActivity {
         chickenToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+                if (isChecked) {
 
-                    if( !pizza.contains("chicken")){
+                    if (!pizza.contains("chicken")) {
                         pizza.add("chicken");
                         toppingPrice = (toppingPrice + 0.50);
                         priceUpdate();
                         System.out.println(pizza);
                     }
-                }
-                else{
-                    if( pizza.contains("chicken")){
+                } else {
+                    if (pizza.contains("chicken")) {
                         pizza.remove("chicken");
                         toppingPrice = (toppingPrice - 0.50);
                         priceUpdate();
@@ -169,17 +161,16 @@ public class Toppings extends AppCompatActivity {
         mushroomToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+                if (isChecked) {
 
-                    if( !pizza.contains("mushroom")){
+                    if (!pizza.contains("mushroom")) {
                         pizza.add("mushroom");
                         toppingPrice = (toppingPrice + 0.50);
                         priceUpdate();
                         System.out.println(pizza);
                     }
-                }
-                else{
-                    if( pizza.contains("mushroom")){
+                } else {
+                    if (pizza.contains("mushroom")) {
                         pizza.remove("mushroom");
                         toppingPrice = (toppingPrice - 0.50);
                         priceUpdate();
@@ -192,17 +183,16 @@ public class Toppings extends AppCompatActivity {
         sweetcornToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+                if (isChecked) {
 
-                    if( !pizza.contains("sweetcorn")){
+                    if (!pizza.contains("sweetcorn")) {
                         pizza.add("sweetcorn");
                         toppingPrice = (toppingPrice + 0.50);
                         priceUpdate();
                         System.out.println(pizza);
                     }
-                }
-                else{
-                    if( pizza.contains("sweetcorn")){
+                } else {
+                    if (pizza.contains("sweetcorn")) {
                         pizza.remove("sweetcorn");
                         toppingPrice = (toppingPrice - 0.50);
                         priceUpdate();
@@ -215,17 +205,16 @@ public class Toppings extends AppCompatActivity {
         onionToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+                if (isChecked) {
 
-                    if( !pizza.contains("onion")){
+                    if (!pizza.contains("onion")) {
                         pizza.add("onion");
                         toppingPrice = (toppingPrice + 0.50);
                         priceUpdate();
                         System.out.println(pizza);
                     }
-                }
-                else{
-                    if( pizza.contains("onion")){
+                } else {
+                    if (pizza.contains("onion")) {
                         pizza.remove("onion");
                         toppingPrice = (toppingPrice - 0.50);
                         priceUpdate();
@@ -275,14 +264,14 @@ public class Toppings extends AppCompatActivity {
         });
 
 
-        mDetector = new GestureDetector(this,new GestureDetector.SimpleOnGestureListener(){
+        mDetector = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener() {
             @Override
-            public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY){
-                if (Math.abs(e1.getY() - e2.getY()) > SWIPE_MAX_OFF_PATH){
+            public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+                if (Math.abs(e1.getY() - e2.getY()) > SWIPE_MAX_OFF_PATH) {
                     return false;
                 }
                 if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE
-                        && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY){
+                        && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
                     finish();
                     return true;
                 }
@@ -290,10 +279,12 @@ public class Toppings extends AppCompatActivity {
             }
         });
     }
-    public  boolean onTouchEvent(MotionEvent event){
+
+    public boolean onTouchEvent(MotionEvent event) {
         return mDetector.onTouchEvent(event);
     }
-    private void priceUpdate(){
+
+    private void priceUpdate() {
         total = toppingPrice + price;
         priceAmountTextView.setText(total.toString() + "€");
         myOrder.setPrice(total);

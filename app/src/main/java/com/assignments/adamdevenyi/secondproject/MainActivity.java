@@ -71,8 +71,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     if (typeText.equals("Delivery for later")){
                         myOrder.setDeliveryTime(deliveryTimeTextView.getText().toString());
                     }
-                    Intent intent = new Intent (MainActivity.this, Toppings.class);
-                    startActivity(intent);
+                    if (addressEditText.getText().toString().equals("") || nameEditText.getText().toString().equals("") || pNumEditText.getText().toString().equals("")){
+                        Toast.makeText(MainActivity.this, "Enter all details", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Intent intent = new Intent (MainActivity.this, Toppings.class);
+                        startActivity(intent);
+                    }
+
                     return true;
                 }
                 return false;

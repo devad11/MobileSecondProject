@@ -8,10 +8,16 @@
     tools:layou_editor_absoluteY="81dp">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/hintTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="@string/promo_code"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.032" />
 
     <android.gesture.GestureOverlayView
         android:id="@+id/gestures"
@@ -19,9 +25,21 @@
         android:layout_height="0dp"
         android:layout_marginBottom="15dp"
         android:layout_weight="1.0"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/OrderInfo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
+
+    <Button
+        android:id="@+id/OrderInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/order_info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.901"/>
 </android.support.constraint.ConstraintLayout>
