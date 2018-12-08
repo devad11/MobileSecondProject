@@ -1,7 +1,10 @@
 package com.assignments.adamdevenyi.secondproject;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -16,6 +19,7 @@ public class Confirmation extends AppCompatActivity {
     private Order myOrder;
     private String currentTime;
     private Calendar calendar;
+    private Button orderButton;
 
 
     @Override
@@ -27,7 +31,6 @@ public class Confirmation extends AppCompatActivity {
 
         DateFormat df = new SimpleDateFormat("hh:mm a");
         currentTime = df.format(Calendar.getInstance().getTime());
-
         try {
             Date date = df.parse(currentTime);
             calendar = Calendar.getInstance();
@@ -63,6 +66,15 @@ public class Confirmation extends AppCompatActivity {
         else{
             timeChoicetextView.setText(myOrder.getDeliveryTime().toString());
         }
+
+        orderButton = (Button) findViewById(R.id.orderButton);
+        orderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Confirmation.this, PizzaArrived.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

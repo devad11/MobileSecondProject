@@ -22,7 +22,7 @@
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="317dp">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -179,6 +179,12 @@
             </TableRow>
 
         </TableLayout>
+
+        <Button
+            android:id="@+id/orderButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/order" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

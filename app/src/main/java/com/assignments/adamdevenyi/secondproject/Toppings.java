@@ -65,6 +65,8 @@ public class Toppings extends AppCompatActivity {
             public void onClick(View v) {
 
                 priceUpdate();
+                Intent bIntent = new Intent(Toppings.this, BackgroundService.class);
+                startService(bIntent);
                 Intent intent = new Intent(Toppings.this, Promo.class);
                 startActivity(intent);
 

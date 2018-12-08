@@ -18,7 +18,9 @@
         </activity>
         <activity android:name=".Toppings" />
         <activity android:name=".Promo" />
-        <activity android:name=".Confirmation"></activity>
+        <activity android:name=".Confirmation" />
+        <activity android:name=".PizzaArrived"></activity>
+        <service android:name=".BackgroundService" />
     </application>
 
 </manifest>
