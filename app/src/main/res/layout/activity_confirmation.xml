@@ -184,6 +184,7 @@
             android:id="@+id/orderButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="sendNotification"
             android:text="@string/order" />
     </LinearLayout>
 
