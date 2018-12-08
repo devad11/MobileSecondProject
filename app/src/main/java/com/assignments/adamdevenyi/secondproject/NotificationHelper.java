@@ -19,8 +19,10 @@ public class NotificationHelper extends ContextWrapper {
     //-------------------------
     //      ATTRIBUTES
     //-------------------------
-    private static final String TIMER_CHANNEL_ID = "Timer Channel";
-    private static final String TIMER_CHANNEL_NAME = "Timer";
+    private static final String ORDER_CHANNEL_ID = "Order Channel";
+    private static final String ORDER_CHANNEL_NAME = "Order";
+    private static final String ARRIVED_CHANNEL_ID = "Arrived Channel";
+    private static final String ARRIVED_CHANNEL_NAME = "Arrived";
     private NotificationManager manager;
     private Order myOrder;
 
@@ -45,13 +47,22 @@ public class NotificationHelper extends ContextWrapper {
     @TargetApi(Build.VERSION_CODES.O)
     private void createChannels() {
         NotificationChannel orderChannel =
-                new NotificationChannel(TIMER_CHANNEL_ID, TIMER_CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
+                new NotificationChannel(ORDER_CHANNEL_ID, ORDER_CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
         orderChannel.enableLights(true);
         orderChannel.enableVibration(true);
         orderChannel.setLightColor(Color.GREEN);
         orderChannel.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
 
         getManager().createNotificationChannel(orderChannel);
+
+        NotificationChannel arrivedChannel =
+                new NotificationChannel(ARRIVED_CHANNEL_ID, ARRIVED_CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
+        arrivedChannel.enableLights(true);
+        arrivedChannel.enableVibration(true);
+        arrivedChannel.setLightColor(Color.RED);
+        arrivedChannel.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
+
+        getManager().createNotificationChannel(arrivedChannel);
     }
 
     /**
@@ -78,7 +89,7 @@ public class NotificationHelper extends ContextWrapper {
         Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:0210000001"));
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        return new NotificationCompat.Builder(getApplicationContext(), TIMER_CHANNEL_ID)
+        return new NotificationCompat.Builder(getApplicationContext(), ORDER_CHANNEL_ID)
                 .setSmallIcon(R.mipmap.ic_launcher_round)                                             //add icon
                 .setContentTitle(title)                                                                    //add users title
                 .setContentText(message)                                                                   //add users message
@@ -91,6 +102,27 @@ public class NotificationHelper extends ContextWrapper {
                 .setContentIntent(pendingIntent)                                                           //calls when notification pressed
                 .setColor(Color.GREEN)                                                                     //set colour
                 .addAction(R.mipmap.ic_launcher, "Call", pendingIntent)                               //creates call button and calls when pressed
+                .setAutoCancel(true);
+    }
+
+    public NotificationCompat.Builder getArrivedNotification(String title, String message){
+        myOrder = MainActivity.getMyOrder();
+        Intent intent = new Intent(NotificationHelper.this, PizzaArrived.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        return new NotificationCompat.Builder(getApplicationContext(), ARRIVED_CHANNEL_ID)
+                .setSmallIcon(R.mipmap.ic_launcher_round)                                             //add icon
+                .setContentTitle(title)                                                                    //add users title
+                .setContentText(message)                                                                   //add users message
+                .setStyle(new NotificationCompat.BigTextStyle()                                            //makes notification expandable
+                        .bigText("ENJOY\nThank you for choosing BEST PIZZA!!!\nGet 5% off of your next order by drawing a circle at the promo code page!")//adds text when expanded
+                        .setBigContentTitle("Expanded content")                                            //title of expanded notification
+                        .setSummaryText("Summery"))                                                        //adds summery
+                .setPriority(NotificationCompat.PRIORITY_MAX)                                             //set priority to high by default
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)                                          //set category message
+                .setContentIntent(pendingIntent)                                                           //calls when notification pressed
+                .setColor(Color.RED)                                                                     //set colour
+                .addAction(R.mipmap.ic_launcher, "EAT", pendingIntent)                               //creates call button and calls when pressed
                 .setAutoCancel(true);
     }
 }

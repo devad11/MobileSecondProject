@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Best Pizza</string>
-    <string name="choose_restaurant">Press long for Restaurants</string>
+    <string name="choose_restaurant">Hold here for Options</string>
     <string name="tj">Tequila Jacks</string>
     <string name="soho">SoHo</string>
     <string name="douglas">Douglas Pizza</string>
@@ -40,6 +40,8 @@
     <string name="time">Time</string>
     <string name="price_title">Price</string>
     <string name="longText">slkfmblkslbslkdvsdfldsmf  lsdfbld blsd blsdfbsdsmb mlsbsmlmdb m;sdf; bmsdfnsd,sdvd sdbffn bdsdmdfdfm,awnefjas;b ;kb</string>
+    <string name="eat">EAT</string>
+    <string name="pizza">Pizza</string>
     <string-array name="options">
         <item>ASAP Delivery</item>
         <item>Delivery for later</item>

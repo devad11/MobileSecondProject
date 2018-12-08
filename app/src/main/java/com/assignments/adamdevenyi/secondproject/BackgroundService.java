@@ -32,8 +32,8 @@ public class BackgroundService extends IntentService {
 
             Thread.sleep(10000);
             notificationHelper = new NotificationHelper(getApplicationContext());
-            NotificationCompat.Builder builder = notificationHelper.getOrderNotification("TITLE", "CONTENT");
-            notificationHelper.getManager().notify(1, builder.build());
+            NotificationCompat.Builder builder = notificationHelper.getArrivedNotification("Best Pizza", "Your Pizza arrived");
+            notificationHelper.getManager().notify(2, builder.build());
 
         } catch (InterruptedException e) {
             e.printStackTrace();

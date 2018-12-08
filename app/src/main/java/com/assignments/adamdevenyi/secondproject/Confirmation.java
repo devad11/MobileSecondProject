@@ -29,7 +29,7 @@ import java.util.Random;
 
 public class Confirmation extends AppCompatActivity {
 
-    private TextView phoneChoicetextView, addressChoicetextView, nameChoicetextView, priceChoicetextView, timeChoicetextView, orderTypeChoiceTextView, shopChoicetextView;
+    private TextView pizzaChoiceTextView,phoneChoicetextView, addressChoicetextView, nameChoicetextView, priceChoicetextView, timeChoicetextView, orderTypeChoiceTextView, shopChoicetextView;
     private Order myOrder;
     private String currentTime;
     private Calendar calendar;
@@ -62,6 +62,7 @@ public class Confirmation extends AppCompatActivity {
         timeChoicetextView = (TextView) findViewById(R.id.timeChoicetextView);
         orderTypeChoiceTextView = (TextView) findViewById(R.id.orderTypeChoiceTextView);
         shopChoicetextView = (TextView) findViewById(R.id.shopChoicetextView);
+        pizzaChoiceTextView = (TextView) findViewById(R.id.pizzaChoiceTextView);
 
         phoneChoicetextView.setText(myOrder.getpNum().toString());
         addressChoicetextView.setText(myOrder.getAddress().toString());
@@ -69,6 +70,7 @@ public class Confirmation extends AppCompatActivity {
         priceChoicetextView.setText(String.format("%.2f", myOrder.getPrice()));
         orderTypeChoiceTextView.setText(myOrder.getOrderType().toString());
         shopChoicetextView.setText(myOrder.getShop().toString());
+        pizzaChoiceTextView.setText(myOrder.getPizza().toString());
         if (myOrder.getOrderType().equals("Collect")) {
             timeChoicetextView.setText(currentTime);
         } else if (myOrder.getOrderType().equals("ASAP Delivery")) {

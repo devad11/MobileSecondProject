@@ -22,7 +22,7 @@
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="317dp">
+            android:layout_height="wrap_content">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -179,6 +179,23 @@
             </TableRow>
 
         </TableLayout>
+
+        <TextView
+            android:id="@+id/pizzaTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/pizza"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/pizzaChoiceTextView"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:gravity="center"
+            android:text="TextView"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/orderButton"
