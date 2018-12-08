@@ -32,7 +32,7 @@ public class BackgroundService extends IntentService {
 
             Thread.sleep(10000);
             notificationHelper = new NotificationHelper(getApplicationContext());
-            NotificationCompat.Builder builder = notificationHelper.getTimerChannelNotification("TITLE", "CONTENT");
+            NotificationCompat.Builder builder = notificationHelper.getOrderNotification("TITLE", "CONTENT");
             notificationHelper.getManager().notify(1, builder.build());
 
         } catch (InterruptedException e) {

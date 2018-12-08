@@ -22,6 +22,7 @@ public class NotificationHelper extends ContextWrapper {
     private static final String TIMER_CHANNEL_ID = "Timer Channel";
     private static final String TIMER_CHANNEL_NAME = "Timer";
     private NotificationManager manager;
+    private Order myOrder;
 
     //-------------------------
     //      CONSTRUCTORS
@@ -43,14 +44,14 @@ public class NotificationHelper extends ContextWrapper {
      */
     @TargetApi(Build.VERSION_CODES.O)
     private void createChannels() {
-        NotificationChannel timerChannel =
+        NotificationChannel orderChannel =
                 new NotificationChannel(TIMER_CHANNEL_ID, TIMER_CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
-        timerChannel.enableLights(true);
-        timerChannel.enableVibration(true);
-        timerChannel.setLightColor(Color.GREEN);
-        timerChannel.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
+        orderChannel.enableLights(true);
+        orderChannel.enableVibration(true);
+        orderChannel.setLightColor(Color.GREEN);
+        orderChannel.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
 
-        getManager().createNotificationChannel(timerChannel);
+        getManager().createNotificationChannel(orderChannel);
     }
 
     /**
@@ -72,15 +73,24 @@ public class NotificationHelper extends ContextWrapper {
      * @param message String to become notification body
      * @return NotificationCompat.Builder with the pending intent
      */
-    public NotificationCompat.Builder getTimerChannelNotification(String title, String message){
+    public NotificationCompat.Builder getOrderNotification(String title, String message){
+        myOrder = MainActivity.getMyOrder();
         Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:0210000001"));
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         return new NotificationCompat.Builder(getApplicationContext(), TIMER_CHANNEL_ID)
-                .setContentTitle(title)
-                .setContentText(message)
-                .setSmallIcon(R.mipmap.ic_launcher_round)
-                .setAutoCancel(true)
-                .setContentIntent(pendingIntent);
+                .setSmallIcon(R.mipmap.ic_launcher_round)                                             //add icon
+                .setContentTitle(title)                                                                    //add users title
+                .setContentText(message)                                                                   //add users message
+                .setStyle(new NotificationCompat.BigTextStyle()                                            //makes notification expandable
+                        .bigText(myOrder.toString())                                             //adds text when expanded
+                        .setBigContentTitle("Expanded content")                                            //title of expanded notification
+                        .setSummaryText("Summery"))                                                        //adds summery
+                .setPriority(NotificationCompat.PRIORITY_HIGH)                                             //set priority to high by default
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)                                          //set category message
+                .setContentIntent(pendingIntent)                                                           //calls when notification pressed
+                .setColor(Color.GREEN)                                                                     //set colour
+                .addAction(R.mipmap.ic_launcher, "Call", pendingIntent)                               //creates call button and calls when pressed
+                .setAutoCancel(true);
     }
 }

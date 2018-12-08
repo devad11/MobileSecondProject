@@ -82,7 +82,7 @@ public class Confirmation extends AppCompatActivity {
     }
         public void sendNotification(View v){
             notificationHelper = new NotificationHelper(v.getContext());
-            NotificationCompat.Builder builder = notificationHelper.getTimerChannelNotification("TITLE", "CONTENT");
+            NotificationCompat.Builder builder = notificationHelper.getOrderNotification("Best Pizza", "For any queries press notification to call restaurant!");
             notificationHelper.getManager().notify(1, builder.build());
 
         }
