@@ -1,6 +1,7 @@
 package com.assignments.adamdevenyi.secondproject;
 
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v4.app.DialogFragment;
@@ -20,6 +21,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, TimePickerDialog.OnTimeSetListener {
+
     private TextView restaurantTextView, restaurantPickTextView;
     private Spinner spinner;
     //private String[] restaurants = {"Cork City Center Order", "Douglas Order"};
@@ -155,5 +157,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public static Order getMyOrder(){
         return myOrder;
+    }
+
+    public Context getContext(){
+        return this.getContext();
     }
 }

@@ -23,10 +23,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Random;
 
-import static android.support.v4.app.NotificationCompat.PRIORITY_MAX;
-import static com.assignments.adamdevenyi.secondproject.CreateChannel.CHANNEL_1_ID;
-import static com.assignments.adamdevenyi.secondproject.CreateChannel.CHANNEL_2_ID;
 
 
 public class Confirmation extends AppCompatActivity {
@@ -35,7 +33,7 @@ public class Confirmation extends AppCompatActivity {
     private Order myOrder;
     private String currentTime;
     private Calendar calendar;
-    private NotificationManagerCompat notificationManager;
+    private NotificationHelper notificationHelper;
 
 
     @Override
@@ -81,41 +79,11 @@ public class Confirmation extends AppCompatActivity {
             timeChoicetextView.setText(myOrder.getDeliveryTime().toString());
         }
 
-        notificationManager = NotificationManagerCompat.from(this);
-
     }
         public void sendNotification(View v){
-        System.out.println("WWWWHHHHYYYYYYYYY");
-            String title = "Best Pizza";      //gets title from user
-            String message = "Thank you for your order";  //gets message form user
+            notificationHelper = new NotificationHelper(v.getContext());
+            NotificationCompat.Builder builder = notificationHelper.getTimerChannelNotification("TITLE", "CONTENT");
+            notificationHelper.getManager().notify(1, builder.build());
 
-            Intent call = new Intent(Intent.ACTION_CALL);           //create an intent to make phone call
-            call.setData(Uri.parse("tel:021 0000001"));             //add the phone number to the intent
-
-            //checks for permisson, if there was no permission ask the user
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, 0);
-                return;
-            }
-
-            //create pending intent to be able to add to notification
-            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, call, 0);
-
-            Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID)  //build notification on channel 1
-                    .setSmallIcon(R.mipmap.ic_launcher)                                             //add icon
-                    .setContentTitle(title)                                                                    //add users title
-                    .setContentText(message)                                                                   //add users message
-                    .setStyle(new NotificationCompat.BigTextStyle()                                            //makes notification expandable
-                            .bigText("lkjhgfdoiuytr njnbvfghjfg")                                             //adds text when expanded
-                            .setBigContentTitle("Expanded content")                                            //title of expanded notification
-                            .setSummaryText("Summery"))                                                        //adds summery
-                    .setPriority(NotificationCompat.PRIORITY_HIGH)                                             //set priority to high by default
-                    .setCategory(NotificationCompat.CATEGORY_MESSAGE)                                          //set category message
-                    .setContentIntent(pendingIntent)                                                           //calls when notification pressed
-                    .setColor(Color.GREEN)                                                                     //set colour
-                    .addAction(R.mipmap.ic_launcher_round, "Call", pendingIntent)                               //creates call button and calls when pressed
-                    .setAutoCancel(true)                                                                       //set to cancel
-                    .build();                                                                                  //create the notification
-            notificationManager.notify(1, notification);                                                   //add the notification to channel 1
         }
 }
