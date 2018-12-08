@@ -39,6 +39,7 @@
     <string name="orderType">Order Type</string>
     <string name="time">Time</string>
     <string name="price_title">Price</string>
+    <string name="longText">slkfmblkslbslkdvsdfldsmf  lsdfbld blsd blsdfbsdsmb mlsbsmlmdb m;sdf; bmsdfnsd,sdvd sdbffn bdsdmdfdfm,awnefjas;b ;kb</string>
     <string-array name="options">
         <item>ASAP Delivery</item>
         <item>Delivery for later</item>

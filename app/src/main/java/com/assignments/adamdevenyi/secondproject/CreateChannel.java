@@ -13,23 +13,24 @@ public class CreateChannel extends Application {
     @Override
     public void onCreate(){
         super.onCreate();
-        createNotificationChannel();
+        createNotificationChannels();
     }
 
     //creates new channels if doesnt build ones yet
-    private void createNotificationChannel() {
-        // Create the NotificationChannel, but only on API 26+ because
-        // the NotificationChannel class is new and not in the support library
+    private void createNotificationChannels() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = "MyChannelOne";
-            String description = "For confirm order";
-            int importance = NotificationManager.IMPORTANCE_HIGH;
-            NotificationChannel channel = new NotificationChannel(CHANNEL_1_ID, name, importance);
-            channel.setDescription(description);
-            // Register the channel with the system; you can't change the importance
-            // or other notification behaviors after this
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(channel);
+            NotificationChannel channel = new NotificationChannel(
+                    CHANNEL_1_ID, "Channel 1", NotificationManager.IMPORTANCE_HIGH);        //create channel 1
+            channel.setDescription("This is channel 1");
+
+            NotificationChannel channe2 = new NotificationChannel(
+                    CHANNEL_2_ID, "Channel 2", NotificationManager.IMPORTANCE_HIGH);        //create channel 2
+            channe2.setDescription("This is channel 2");
+
+            //create and add notification manager to channels
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+            manager.createNotificationChannel(channe2);
         }
     }
 }
