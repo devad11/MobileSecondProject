@@ -3,6 +3,7 @@
  * R00155710
  * adam.devenyi@mycit.ie
  *
+ * creates an object to store values for an order
  * */
 package com.assignments.adamdevenyi.secondproject;
 

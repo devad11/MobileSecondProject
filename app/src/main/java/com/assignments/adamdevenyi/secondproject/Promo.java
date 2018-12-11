@@ -3,6 +3,8 @@
  * R00155710
  * adam.devenyi@mycit.ie
  *
+ * can draw gestures to get different promotions
+ * makes the change in the price
  * */
 package com.assignments.adamdevenyi.secondproject;
 

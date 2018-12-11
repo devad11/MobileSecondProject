@@ -3,6 +3,9 @@
  * R00155710
  * adam.devenyi@mycit.ie
  *
+ * this is the Main Activity
+ * it lets the user choose from different options
+ * ask the user to fill out some details
  * */
 package com.assignments.adamdevenyi.secondproject;
 

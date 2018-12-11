@@ -3,6 +3,8 @@
  * R00155710
  * adam.devenyi@mycit.ie
  *
+ * comes up when user choose delivery for later
+ * saves selected time
  * */
 package com.assignments.adamdevenyi.secondproject;
 

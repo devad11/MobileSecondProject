@@ -3,6 +3,10 @@
  * R00155710
  * adam.devenyi@mycit.ie
  *
+ * user can choose pizza size on seekbar
+ * user can select and deselect toppings
+ * price changes as users change details
+ * shows price
  * */
 package com.assignments.adamdevenyi.secondproject;
 

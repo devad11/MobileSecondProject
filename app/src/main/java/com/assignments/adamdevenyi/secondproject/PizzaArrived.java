@@ -3,6 +3,9 @@
  * R00155710
  * adam.devenyi@mycit.ie
  *
+ * gets called by a notification sent by the background service
+ * shows a view what has a graphic created by canvas and paint
+ * button sends back to main activity
  * */
 package com.assignments.adamdevenyi.secondproject;
 

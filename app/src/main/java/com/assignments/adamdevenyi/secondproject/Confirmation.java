@@ -3,6 +3,10 @@
  * R00155710
  * adam.devenyi@mycit.ie
  *
+ * show all details
+ * sets correct delivery time
+ * send notification of the details
+ * starts background service
  * */
 package com.assignments.adamdevenyi.secondproject;
 

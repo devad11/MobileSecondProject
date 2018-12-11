@@ -3,6 +3,9 @@
  * R00155710
  * adam.devenyi@mycit.ie
  *
+ * starts from Confirmation Activity
+ * thread sleeps for 10 sec
+ * sends notification
  * */
 package com.assignments.adamdevenyi.secondproject;
 

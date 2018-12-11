@@ -3,6 +3,10 @@
  * R00155710
  * adam.devenyi@mycit.ie
  *
+ * this class creats notification and for that it creates notification manager and channels
+ * it has two types of notification.
+ *      1 for details
+ *      2 when pizza arrived
  * */
 package com.assignments.adamdevenyi.secondproject;
 
