@@ -23,9 +23,9 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 
-
 public class NotificationHelper extends ContextWrapper {
 
+    //List of variables
     private static final String ORDER_CHANNEL_ID = "Order Channel";
     private static final String ORDER_CHANNEL_NAME = "Order";
     private static final String ARRIVED_CHANNEL_ID = "Arrived Channel";
@@ -33,7 +33,7 @@ public class NotificationHelper extends ContextWrapper {
     private NotificationManager manager;
     private Order myOrder;
 
-
+    //Constructor
     public NotificationHelper(Context base) {
         super(base);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -41,10 +41,15 @@ public class NotificationHelper extends ContextWrapper {
         }
     }
 
+    /*
+     * creates channels for notifications
+     * Checks if android version is Oreo or later
+     * creates 2 different channels. both with High importance
+     */
     @TargetApi(Build.VERSION_CODES.O)
     private void createChannels() {
         NotificationChannel orderChannel =
-                new NotificationChannel(ORDER_CHANNEL_ID, ORDER_CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
+                new NotificationChannel(ORDER_CHANNEL_ID, ORDER_CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH); //Channel details
         orderChannel.enableLights(true);
         orderChannel.enableVibration(true);
         orderChannel.setLightColor(Color.GREEN);
@@ -53,7 +58,7 @@ public class NotificationHelper extends ContextWrapper {
         getManager().createNotificationChannel(orderChannel);
 
         NotificationChannel arrivedChannel =
-                new NotificationChannel(ARRIVED_CHANNEL_ID, ARRIVED_CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
+                new NotificationChannel(ARRIVED_CHANNEL_ID, ARRIVED_CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH); //Channel details
         arrivedChannel.enableLights(true);
         arrivedChannel.enableVibration(true);
         arrivedChannel.setLightColor(Color.RED);
@@ -63,8 +68,7 @@ public class NotificationHelper extends ContextWrapper {
     }
 
     /**
-     * Getter for the associated Notification Manager
-     * if ones not created yet it creates a new one
+     * Creates a manager if one havent created yet
      * @return notification manager
      */
     public NotificationManager getManager() {
@@ -73,10 +77,17 @@ public class NotificationHelper extends ContextWrapper {
         return this.manager;
     }
 
+    /**
+     * Creates a notification with specific details
+     * the notification can call a number when pressed
+     * @param: a title for notification
+     * @param: a message for notification
+     * @return: NotificationCompat
+     */
     public NotificationCompat.Builder getOrderNotification(String title, String message){
-        myOrder = MainActivity.getMyOrder();
-        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:0210000001"));
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        myOrder = MainActivity.getMyOrder();                                                                //gets the order to be able to read details
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:0210000001"));                        //create an intent to make a call
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT); //make intent pendingIntent
 
         return new NotificationCompat.Builder(getApplicationContext(), ORDER_CHANNEL_ID)
                 .setSmallIcon(R.mipmap.ic_launcher_round)                                                   //add icon
@@ -94,10 +105,16 @@ public class NotificationHelper extends ContextWrapper {
                 .setAutoCancel(true);
     }
 
+    /**
+     * Creates a notification with specific details
+     * the notification can open a new activity when pressed
+     * @param: a title for notification
+     * @param: a message for notification
+     * @return: NotificationCompat
+     */
     public NotificationCompat.Builder getArrivedNotification(String title, String message){
-        myOrder = MainActivity.getMyOrder();
-        Intent intent = new Intent(NotificationHelper.this, PizzaArrived.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Intent intent = new Intent(NotificationHelper.this, PizzaArrived.class);               //intent to change to new activity
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);//make intent pendingIntent
 
         return new NotificationCompat.Builder(getApplicationContext(), ARRIVED_CHANNEL_ID)
                 .setSmallIcon(R.mipmap.ic_launcher_round)                                                   //add icon
