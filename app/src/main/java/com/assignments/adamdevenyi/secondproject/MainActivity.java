@@ -1,9 +1,14 @@
+/*
+ * Adam Devenyi
+ * R00155710
+ * adam.devenyi@mycit.ie
+ *
+ * */
 package com.assignments.adamdevenyi.secondproject;
 
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.os.CountDownTimer;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,8 +29,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private TextView restaurantTextView, restaurantPickTextView;
     private Spinner spinner;
-    //private String[] restaurants = {"Cork City Center Order", "Douglas Order"};
-
     private static final int SWIPE_MIN_DISTANCE = 120;
     private static final int SWIPE_MAX_OFF_PATH = 250;
     private static final int SWIPE_THRESHOLD_VELOCITY = 200;

@@ -1,3 +1,9 @@
+/*
+ * Adam Devenyi
+ * R00155710
+ * adam.devenyi@mycit.ie
+ *
+ * */
 package com.assignments.adamdevenyi.secondproject;
 
 import android.app.Dialog;

@@ -1,6 +1,11 @@
+/*
+ * Adam Devenyi
+ * R00155710
+ * adam.devenyi@mycit.ie
+ *
+ * */
 package com.assignments.adamdevenyi.secondproject;
 
-import android.app.Notification;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

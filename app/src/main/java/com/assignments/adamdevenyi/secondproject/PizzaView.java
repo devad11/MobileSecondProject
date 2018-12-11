@@ -1,3 +1,9 @@
+/*
+ * Adam Devenyi
+ * R00155710
+ * adam.devenyi@mycit.ie
+ *
+ * */
 package com.assignments.adamdevenyi.secondproject;
 
 import android.content.Context;
@@ -12,25 +18,21 @@ public class PizzaView extends View {
 
     public PizzaView(Context context) {
         super(context);
-
         init(null);
     }
 
     public PizzaView(Context context, AttributeSet attrs) {
         super(context, attrs);
-
         init(attrs);
     }
 
     public PizzaView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
         init(attrs);
     }
 
     public PizzaView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-
         init(attrs);
     }
 
@@ -42,11 +44,7 @@ public class PizzaView extends View {
     protected void onDraw(Canvas canvas){
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.FILL);
-        paint.setColor((Color.BLUE));
-        //canvas.drawPaint(paint);
         paint.setColor(getResources().getColor(R.color.orange));
-//        canvas.drawRect(50,50,200,200,paint);
-
         canvas.drawCircle(540, 800, 450, paint);
 
         paint.setColor(Color.YELLOW);

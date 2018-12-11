@@ -1,18 +1,13 @@
+/*
+ * Adam Devenyi
+ * R00155710
+ * adam.devenyi@mycit.ie
+ *
+ * */
 package com.assignments.adamdevenyi.secondproject;
 
-import android.Manifest;
-
-import android.app.Notification;
-import android.app.PendingIntent;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.net.Uri;
-
-
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,8 +18,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Random;
-
 
 
 public class Confirmation extends AppCompatActivity {
@@ -86,6 +79,7 @@ public class Confirmation extends AppCompatActivity {
             notificationHelper = new NotificationHelper(v.getContext());
             NotificationCompat.Builder builder = notificationHelper.getOrderNotification("Best Pizza", "For any queries press notification to call restaurant!");
             notificationHelper.getManager().notify(1, builder.build());
-
+            Intent bIntent = new Intent(Confirmation.this, BackgroundService.class);
+            startService(bIntent);
         }
 }

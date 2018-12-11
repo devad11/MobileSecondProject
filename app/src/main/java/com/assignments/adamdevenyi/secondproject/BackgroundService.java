@@ -1,12 +1,14 @@
+/*
+ * Adam Devenyi
+ * R00155710
+ * adam.devenyi@mycit.ie
+ *
+ * */
 package com.assignments.adamdevenyi.secondproject;
 
 import android.app.IntentService;
-import android.content.Context;
 import android.content.Intent;
-import android.os.CountDownTimer;
-import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
-import android.view.View;
 
 public class BackgroundService extends IntentService {
 

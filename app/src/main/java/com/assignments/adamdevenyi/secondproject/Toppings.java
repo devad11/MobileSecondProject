@@ -1,3 +1,9 @@
+/*
+ * Adam Devenyi
+ * R00155710
+ * adam.devenyi@mycit.ie
+ *
+ * */
 package com.assignments.adamdevenyi.secondproject;
 
 import android.content.Intent;
@@ -10,11 +16,9 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ToggleButton;
-
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class Toppings extends AppCompatActivity {
 
@@ -65,8 +69,6 @@ public class Toppings extends AppCompatActivity {
             public void onClick(View v) {
 
                 priceUpdate();
-                Intent bIntent = new Intent(Toppings.this, BackgroundService.class);
-                startService(bIntent);
                 Intent intent = new Intent(Toppings.this, Promo.class);
                 startActivity(intent);
 
@@ -266,7 +268,6 @@ public class Toppings extends AppCompatActivity {
             }
         });
 
-
         mDetector = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener() {
             @Override
             public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
@@ -292,6 +293,5 @@ public class Toppings extends AppCompatActivity {
         priceAmountTextView.setText(total.toString() + "€");
         myOrder.setPrice(total);
         myOrder.setPizza(pizza);
-        System.out.println(myOrder.toString());
     }
 }
